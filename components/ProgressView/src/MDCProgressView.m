@@ -17,13 +17,13 @@
 #include <tgmath.h>
 
 #import "MaterialPalettes.h"
-#import "MDCProgressGradientView.h"
-#import "MDCProgressLayerView.h"
+#import "private/MDCProgressGradientView.h"
+#import "private/MDCProgressLayerView.h"
 
-#import "MaterialProgressViewStrings.h"
-#import "MaterialProgressViewStrings_table.h"
+#import "private/MaterialProgressViewStrings.h"
+#import "private/MaterialProgressViewStrings_table.h"
 #import "MaterialMath.h"
-#import <MDFInternationalization/MDFInternationalization.h>
+#import "MDFInternationalization.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

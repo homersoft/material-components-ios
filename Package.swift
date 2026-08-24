@@ -11,6 +11,8 @@ let package = Package(
     .library(name: "MDCTextFieldsColorThemer", targets: ["TextFieldsColorThemer"]),
     .library(name: "MDCTextFieldsTheming", targets: ["TextFieldsTheming"]),
     .library(name: "MDCActivityIndicator", targets: ["ActivityIndicator"]),
+    .library(name: "MDCProgressView", targets: ["ProgressView"]),
+    .library(name: "MDCProgressViewTheming", targets: ["ProgressViewTheming"]),
   ],
   dependencies: [
     .package(url: "https://github.com/homersoft/material-internationalization-ios", revision: "f767f351139a1f097352e206e8962755f0efb55e"),
@@ -65,6 +67,26 @@ let package = Package(
       exclude: [
         "MaterialActivityIndicator.bundle",
       ],
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "ProgressView",
+      dependencies: [
+        "Palettes",
+        "PrivateMath",
+        .product(name: "MDFInternationalization", package: "material-internationalization-ios"),
+      ],
+      path: "components/ProgressView/src",
+      exclude: [
+        "Theming",
+        "MaterialProgressView.bundle",
+      ],
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "ProgressViewTheming",
+      dependencies: ["ProgressView", "SchemesContainer"],
+      path: "components/ProgressView/src/Theming",
       publicHeadersPath: "."
     ),
 
