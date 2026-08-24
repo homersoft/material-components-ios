@@ -19,7 +19,7 @@
 #import "UIFont+MaterialScalable.h"
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wprivate-header"
-#import "MDCTypographyUtilities.h"
+#import "../private/MDCTypographyUtilities.h"
 #pragma clang diagnostic pop
 
 NS_ASSUME_NONNULL_BEGIN
