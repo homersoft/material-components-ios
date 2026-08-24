@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import <MotionInterchange/MotionInterchange.h>
+#import "MotionInterchange/MotionInterchange.h"
 
 typedef struct MDCActivityIndicatorMotionSpecIndeterminate {
   MDMMotionTiming outerRotation;
