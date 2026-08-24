@@ -13,6 +13,8 @@ let package = Package(
     .library(name: "MDCActivityIndicator", targets: ["ActivityIndicator"]),
     .library(name: "MDCProgressView", targets: ["ProgressView"]),
     .library(name: "MDCProgressViewTheming", targets: ["ProgressViewTheming"]),
+    .library(name: "MDCTextControlsOutlinedTextFields", targets: ["TextControlsOutlinedTextFields"]),
+    .library(name: "MDCTextControlsOutlinedTextFieldsTheming", targets: ["TextControlsOutlinedTextFieldsTheming"]),
   ],
   dependencies: [
     .package(url: "https://github.com/homersoft/material-internationalization-ios", revision: "f767f351139a1f097352e206e8962755f0efb55e"),
@@ -87,6 +89,38 @@ let package = Package(
       name: "ProgressViewTheming",
       dependencies: ["ProgressView", "SchemesContainer"],
       path: "components/ProgressView/src/Theming",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "TextControlsOutlinedTextFields",
+      dependencies: [
+        "Availability",
+        "TextControlsBaseTextFields",
+        "TextControlsPrivateOutlinedStyle",
+      ],
+      path: "components/TextControls/src/OutlinedTextFields",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "TextControlsOutlinedTextFieldsTheming",
+      dependencies: ["TextControlsOutlinedTextFields", "SchemesContainer"],
+      path: "components/TextControls/src/OutlinedTextFieldsTheming",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "TextControlsBaseTextFields",
+      dependencies: [
+        "TextControlsPrivateShared",
+        "TextControlsPrivateBaseStyle",
+        "TextControlsPrivateTextFields",
+        .product(name: "MDFInternationalization", package: "material-internationalization-ios"),
+      ],
+      path: "components/TextControls/src/BaseTextFields",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "TextControlsEnums",
+      path: "components/TextControls/src/Enums",
       publicHeadersPath: "."
     ),
 
@@ -266,6 +300,30 @@ let package = Package(
     .target(
       name: "PrivateMath",
       path: "components/private/Math/src",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "TextControlsPrivateShared",
+      dependencies: ["TextControlsEnums", "AnimationTiming", "PrivateMath"],
+      path: "components/private/TextControlsPrivate/src/Shared",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "TextControlsPrivateBaseStyle",
+      dependencies: ["TextControlsPrivateShared", "AnimationTiming", "PrivateMath"],
+      path: "components/private/TextControlsPrivate/src/BaseStyle",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "TextControlsPrivateTextFields",
+      dependencies: ["PrivateMath", "TextControlsPrivateShared"],
+      path: "components/private/TextControlsPrivate/src/TextFields",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "TextControlsPrivateOutlinedStyle",
+      dependencies: ["Availability", "AnimationTiming", "PrivateMath", "TextControlsPrivateShared"],
+      path: "components/private/TextControlsPrivate/src/OutlinedStyle",
       publicHeadersPath: "."
     ),
   ]
