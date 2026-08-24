@@ -10,10 +10,13 @@ let package = Package(
     .library(name: "MDCTextFields", targets: ["TextFields"]),
     .library(name: "MDCTextFieldsColorThemer", targets: ["TextFieldsColorThemer"]),
     .library(name: "MDCTextFieldsTheming", targets: ["TextFieldsTheming"]),
+    .library(name: "MDCActivityIndicator", targets: ["ActivityIndicator"]),
   ],
   dependencies: [
     .package(url: "https://github.com/homersoft/material-internationalization-ios", revision: "f767f351139a1f097352e206e8962755f0efb55e"),
     .package(url: "https://github.com/homersoft/material-text-accessibility-ios", revision: "8584fcc35eacfe7859e8ae8d35a4c31a234b29e6"),
+    .package(url: "https://github.com/homersoft/motion-animator-objc", revision: "87804cb6f141e0c923c2d653aec207397a71073b"),
+    .package(url: "https://github.com/homersoft/motion-interchange-objc", revision: "331347547cc5a42273ce17620630c3df5cf9ff82"),
   ],
   targets: [
     .target(
@@ -46,6 +49,22 @@ let package = Package(
       name: "TextFieldsTheming",
       dependencies: ["TextFields", "TextFieldsColorThemer", "SchemesContainer"],
       path: "components/TextFields/src/Theming",
+      publicHeadersPath: "."
+    ),
+    .target(
+      name: "ActivityIndicator",
+      dependencies: [
+        "MinimumOS",
+        "Palettes",
+        "PrivateApplication",
+        .product(name: "MDFInternationalization", package: "material-internationalization-ios"),
+        .product(name: "MotionAnimator", package: "motion-animator-objc"),
+        .product(name: "MotionInterchange", package: "motion-interchange-objc"),
+      ],
+      path: "components/ActivityIndicator/src",
+      exclude: [
+        "MaterialActivityIndicator.bundle",
+      ],
       publicHeadersPath: "."
     ),
 
