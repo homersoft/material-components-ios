@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import <MaterialComponents/MaterialContainerScheme.h>
-#import <MaterialComponents/MaterialTextFields.h>
+#import "MaterialContainerScheme.h"
+#import "MaterialTextFields.h"
 
 API_DEPRECATED_BEGIN(
     "🕘 Schedule time to migrate. "

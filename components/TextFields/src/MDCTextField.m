@@ -14,7 +14,7 @@
 
 #import "MDCTextField.h"
 
-#import <MDFInternationalization/MDFInternationalization.h>
+#import "MDFInternationalization.h"
 
 #import "MDCTextFieldPositioningDelegate.h"
 #import "MDCTextInputBorderView.h"

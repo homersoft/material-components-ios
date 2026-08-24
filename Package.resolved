@@ -1,0 +1,21 @@
+{
+  "pins" : [
+    {
+      "identity" : "material-internationalization-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/homersoft/material-internationalization-ios",
+      "state" : {
+        "revision" : "f767f351139a1f097352e206e8962755f0efb55e"
+      }
+    },
+    {
+      "identity" : "material-text-accessibility-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/homersoft/material-text-accessibility-ios",
+      "state" : {
+        "revision" : "8584fcc35eacfe7859e8ae8d35a4c31a234b29e6"
+      }
+    }
+  ],
+  "version" : 2
+}
