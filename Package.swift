@@ -7,6 +7,7 @@ let package = Package(
     .iOS(.v11)
   ],
   products: [
+    .library(name: "MDCButtons", targets: ["Buttons"]),
     .library(name: "MDCTextFields", targets: ["TextFields"]),
     .library(name: "MDCTextFieldsColorThemer", targets: ["TextFieldsColorThemer"]),
     .library(name: "MDCTextFieldsTheming", targets: ["TextFieldsTheming"]),
