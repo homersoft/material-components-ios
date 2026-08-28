@@ -16,6 +16,7 @@ let package = Package(
     .library(name: "MDCProgressViewTheming", targets: ["ProgressViewTheming"]),
     .library(name: "MDCTextControlsOutlinedTextFields", targets: ["TextControlsOutlinedTextFields"]),
     .library(name: "MDCTextControlsOutlinedTextFieldsTheming", targets: ["TextControlsOutlinedTextFieldsTheming"]),
+    .library(name: "MDCSchemesColor", targets: ["SchemesColor"]),
   ],
   dependencies: [
     .package(url: "https://github.com/homersoft/material-internationalization-ios", revision: "f767f351139a1f097352e206e8962755f0efb55e"),
